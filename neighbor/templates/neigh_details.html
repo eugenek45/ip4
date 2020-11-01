@@ -1,0 +1,60 @@
+{% extends 'base.html' %} 
+{% load static%} 
+{% load bootstrap3 %}
+
+
+<!-- Styles block -->
+{% block styles %}
+ {{block.super}}
+  {% endblock %}
+
+
+<!-- Content block -->
+{% block content %} {{block.super}}
+<style>
+    p{
+        padding: 5%;
+        background-color:rgb(196, 183, 183);
+        background-attachment: fixed;
+        opacity: 0.8;
+        padding: 5%;
+        border-radius: 20px;
+        margin: 5%;
+        color:white;
+        font-size: 28px;
+    }
+    .container{
+        text-align: center;
+    }
+    body{
+        background-image:url('http://travelhdwallpapers.com/wp-content/uploads/2017/03/Iceland-Wallpaper-1.jpg');   
+    }
+</style>
+<body>
+<br><br><br>
+<div class="container">
+
+    <!-- Create Post form -->
+    <section class="col-md-5 col-sm-12">
+        <div>
+            <p>Population : {{details.population}}</p>
+            <p>location : {{details.Neighborhood}}</p>
+            <p>number of house : {{details.id}}</p>
+            <p>police no : {{details.police_no}}</p>
+            <p>hospital no : {{details.hospital_no}}</p>
+            
+            {% if exists.estate.id == details.id %}
+            <a href=" {% url 'allHoods' %}">
+                <button type="button" name="button" class="btn btn-danger btn-md  pull-right  ">Relocate </button>
+            </a>
+            {% else %}
+            <a href=" {% url 'follow' details.id%}">
+                <button type="button" name="button" class="btn btn-primary btn-md  pull-right  ">Move Here</button>
+            </a>
+            {% endif %}
+        </div>
+    </section>
+</div>
+
+{% endblock %}
+</body>

@@ -1,0 +1,77 @@
+{% extends 'base.html' %} 
+{% load static%}
+<!-- Styles block -->
+{% block styles %}
+ {{block.super}} 
+ {% endblock %} 
+ {% block content %}
+
+<!--Styles-->
+
+<style>
+    .container {
+        background-color:rgb(175, 175, 216);
+        background-attachment: fixed;
+        opacity: 0.8;
+        text-align: center;
+        /* padding: 13%;
+        padding-top: 5%;
+        padding-left: 5%; */
+        color: white;
+        border-radius: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        margin-top: 10%;
+        font-size: 20px;
+        padding-bottom: 2%;
+    }
+    body {
+        background-image:url('https://thewallpaper.co//wp-content/uploads/2016/10/hd-ireland-wallpapers-amazing-images-1080p-windows-wallpapers-widescreen-desktop-backgrounds-dual-monitors-colourful-ultra-hd-1920x1080.jpg');
+    }
+    .container-1{
+        background-color: white;
+        text-align: center;
+        padding: 2%;
+        margin: 1%;
+        padding-bottom: 5%;
+        border-radius: 10px;
+    }
+</style>
+
+<!--End of styles-->
+<body>
+    <div class="container">
+        <br><br>
+        <section class="col-md-8 col-sm-12">
+            <h3 style="text-align:center;font-size: 28px">Posts</h3>
+            <hr>
+            {%if posts %} 
+            {% for post in posts %}
+            <p>
+                <span style="color:rgb(5, 5, 54)"> {{post.user}}</span> {{post.message}}
+                
+            </p>
+            {% endfor %}
+             {% else %}
+            <p style="text-align:center">No activity Yet</p>
+            {% endif %}
+        </section>
+
+
+        <section class="col-md-4 col-sm-12">
+            <h4 style="text-align:center;font-size: 28px"> Businesses in {{estates.estate}}</h4>
+            {% if business %} 
+            {% for biz in business %}
+        <div class="container-1">>
+            <a href="{% url 'business' biz.id %}">
+                <p>{{biz.project}}</p>
+            </a>
+        </div>
+            {% endfor %} {% else %}
+            <p>No Business Posted Yet</p>
+            {% endif%}
+        </section>
+
+    </div>
+
+        {% endblock %}
+</body>
