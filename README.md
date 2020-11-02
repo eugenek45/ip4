@@ -63,4 +63,4 @@ This can be found in the specs.md file.
 ## License
 MIT License
 Licensed under MIT License
-Ⓒ Made in November 2019 by ElianeH
+Ⓒ Made in November 2020 by Eugene
