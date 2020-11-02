@@ -7,7 +7,7 @@ a web application that allows you to be in the loop about everything happening i
 
 
 ## Link to Live Site 
-https://elhoods.herokuapp.com/
+
 ## Installation Requirements
   Clone this repository and navigate to the folder.
   Run the following commands to allow functionality of the app:-
