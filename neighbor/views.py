@@ -107,7 +107,7 @@ def create_business(request):
     View function to post a message
     '''
     current_user = request.user
-    est = Follow.objects.get(user = request.user.id)
+    est = Follow.objects.get(user = request.user)
 
     if request.method == 'POST':
         form = BusinessForm(request.POST, request.FILES)
